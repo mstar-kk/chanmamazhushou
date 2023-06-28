@@ -1,0 +1,24 @@
+{
+  "name": "蝉妈妈助手",
+  "description": "蝉妈妈助手",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "./page/assets/js/background.js"
+  },
+  "action": {
+    "default_popup": "./page/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.chanmama.com/*",
+        "*://*.chanmama.com/speakDetail/*",
+        "*://chanmama.com/*",
+        "*://chanmama.com/speakDetail/*"
+      ],
+      "js": ["./page/assets/js/content.js"]
+    }
+  ],
+  "permissions": ["activeTab", "scripting", "tabs"]
+}
